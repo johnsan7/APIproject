@@ -5,12 +5,12 @@
 	console.log("Getting to request");
 		var req = new XMLHttpRequest();
 				
-		var sendAddress = 'http://haveibeenpwned.com/api/breachedaccount/alanmandrag@hotmail.com';
+		var sendAddress = 'https://haveibeenpwned.com/api/breachedaccount/alanmandrag@hotmail.com';
 				
 		
 		req.open('GET', sendAddress, true);
 		req.setRequestHeader("Accept", "application/vnd.haveibeenpwned.v2+json");
-		req.setRequestHeader("User-Agent", "OSUTester");
+		req.setRequestHeader("User-Agent", null);
 
 		req.addEventListener('load',function()
 		{
