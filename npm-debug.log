@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'XMLHttpRequest',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose install initial load of C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\package.json
+5 warn package.json assignment@1.0.0 No repository field.
+6 warn package.json assignment@1.0.0 No README data
+7 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\body-parser\package.json
+8 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\express\package.json
+9 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\express-handlebars\package.json
+10 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\express-session\package.json
+11 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\mysql\package.json
+12 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\request\package.json
+13 verbose installManyTop reading scoped package data from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\node_modules\sessions\package.json
+14 info package.json sessions@0.0.2 No license field.
+15 verbose readDependencies loading dependencies from C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project\package.json
+16 silly cache add args [ 'XMLHttpRequest', null ]
+17 verbose cache add spec XMLHttpRequest
+18 silly cache add parsed spec Result {
+18 silly cache add   raw: 'XMLHttpRequest',
+18 silly cache add   scope: null,
+18 silly cache add   name: 'XMLHttpRequest',
+18 silly cache add   rawSpec: '',
+18 silly cache add   spec: '*',
+18 silly cache add   type: 'range' }
+19 silly addNamed XMLHttpRequest@*
+20 verbose addNamed "*" is a valid semver range for XMLHttpRequest
+21 silly addNameRange { name: 'XMLHttpRequest', range: '*', hasData: false }
+22 silly mapToRegistry name XMLHttpRequest
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/XMLHttpRequest
+26 verbose addNameRange registry:https://registry.npmjs.org/XMLHttpRequest not in flight; fetching
+27 verbose request uri https://registry.npmjs.org/XMLHttpRequest
+28 verbose request no auth needed
+29 info attempt registry request try #1 at 10:42:01 AM
+30 verbose request id dd436bb7ef144666
+31 http request GET https://registry.npmjs.org/XMLHttpRequest
+32 http 404 https://registry.npmjs.org/XMLHttpRequest
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=0',
+33 verbose headers   'content-length': '2',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Mon, 30 Nov 2015 16:41:56 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   age: '0',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-dfw1825-DFW',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1448901716.688102,VS0,VE49' }
+34 silly get cb [ 404,
+34 silly get   { 'content-type': 'application/json',
+34 silly get     'cache-control': 'max-age=0',
+34 silly get     'content-length': '2',
+34 silly get     'accept-ranges': 'bytes',
+34 silly get     date: 'Mon, 30 Nov 2015 16:41:56 GMT',
+34 silly get     via: '1.1 varnish',
+34 silly get     age: '0',
+34 silly get     connection: 'keep-alive',
+34 silly get     'x-served-by': 'cache-dfw1825-DFW',
+34 silly get     'x-cache': 'MISS',
+34 silly get     'x-cache-hits': '0',
+34 silly get     'x-timer': 'S1448901716.688102,VS0,VE49' } ]
+35 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/XMLHttpRequest
+35 verbose stack     at makeError (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:242:14)
+35 verbose stack     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+35 verbose stack     at Request.self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1063:14)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:1009:12)
+36 verbose statusCode 404
+37 verbose pkgid XMLHttpRequest
+38 verbose cwd C:\Users\RaulDuke\Documents\CompSciDegree\5thQuarter\WebDev\API Project
+39 error Windows_NT 6.1.7601
+40 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "XMLHttpRequest" "--save"
+41 error node v4.2.2
+42 error npm  v2.14.7
+43 error code E404
+44 error 404 Registry returned 404 for GET on https://registry.npmjs.org/XMLHttpRequest
+44 error 404
+44 error 404 'XMLHttpRequest' is not in the npm registry.
+44 error 404 Your package name is not valid, because
+44 error 404
+44 error 404  1. name can no longer contain capital letters
+44 error 404 It was specified as a dependency of 'assignment'
+44 error 404
+44 error 404 Note that you can also install from a
+44 error 404 tarball, folder, http url, or git url.
+45 verbose exit [ 1, true ]
