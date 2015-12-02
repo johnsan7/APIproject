@@ -2,10 +2,19 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>API Explanation, Have I been Pwned API</title>
+
+<div class="header"
+<h3>API Guide Assignment, Web Development</h3>
 <br>
-Implementation of the 2nd version of the HIBP API using content negotiation
-</head>
+Andrew Johnson
+</div>
+
+
 <body>
+
+<div class=toptitle>
+Implementation of the 2nd version of the HIBP API using content negotiation
+</div>
 
 <p  class=textPar> The best option to use in my opinion with the 2nd version of the API is to specify in the request header the version, and to also specify in the request header the user agent. 
 The user agent is the service that is requesting the information, it is required, but you can just make one up, you do not need to have registered it or anything like that. 
@@ -20,15 +29,17 @@ GET https://haveibeenpwned.com/api/{service}/{parameter}
 Accept=application/vnd.haveibeenpwned.v2+json
 </div>
 
-<p class=textPar>	You must also specify in the accept header. 
+<p class=textPar>	You must also specify in the accept header a user-agent. The user-agent is used to identify the program making the request.  
 In the request below, I create a simple webpage that makes a request to HIBP using the 2nd version of the API. 
 I have an old email of mine that was leaked hardcoded in this example, you could add your own, or make it user supplied very easily. 
-These three lines set that up: </p> 
+These three lines set that up the required content negotiation header (to specify v2 of the API) and the user-agent header: </p> 
 
 <div class=code>
+<pre>
 req.open('GET', sendAddress, true);
 req.setRequestHeader("Accept", "application/vnd.haveibeenpwned.v2+json");
 req.setRequestHeader("User-Agent", 'OSUTest');
+</pre>
 </div>
 
 <p class=textPar>The setRequestHeader lines set the content negotiation options (that dictate that we are using version 2 of the API) and also set the user agent, which is required by the API. 
@@ -87,3 +98,4 @@ You can easily integrate this into your webpage as well. </p>
 
 </div>
 
+<a href="Insert Link to Tale of 2 apis">Previous Page</a> <a href="Insert Link to customAPI">Next Page</a> 

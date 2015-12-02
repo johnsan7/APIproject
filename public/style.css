@@ -1,9 +1,23 @@
 p{
-    text-align: center
-
+    text-align: center;
+	text-align: justify;
+	text-indent: 50px;
 }
 .code{
-	background-color: gray;
+	background-color: beige;
+
 	
 	
-};
+}
+.nextLink{
+	text-align: center;
+	
+}
+.toptitle{
+	text-align: center;
+	font-weight: bolder;
+}
+.header{
+	background-color: lightblue;
+	
+}

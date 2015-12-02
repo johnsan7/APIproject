@@ -2,17 +2,27 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>API Explanation, Have I been Pwned API</title>
+
+<div class="header"
+<h3>API Guide Assignment, Web Development</h3>
 <br>
-Custom API Implementation
-</head>
+Andrew Johnson
+</div>
+
+
 <body>
+
+<div class=toptitle>
+Custom API Implementation
+</div>
+
 
 <p class=textPar> I set out originally to create an interface that would leverage the Ashley Madison hack data. 
 Ashley Madison was supposedly a website where people involved in relationships would register presumably to facilitate cheating on their spouse. 
 There was an enormous leak of account information on Ashley Madison and it is on HIBP. 
-The intent of this customer interface was to allow a person to send a POST request containing a list of email addresses. 
+The intent of this custom interface was to allow a person to send a POST request containing a list of email addresses. 
 The page would then do get requests using version 1 of the API to see if the email was leaked as part of the Ashley Madison hack. 
-Unfortunately, (or really probably fortunately, this is sort of sensitive information) the creator of HIBP has anticipated uses such as this, and does not release the Ashley Madison data through the API, or to users except it will reveal if an email was in that leak if the user confirms that email. 
+Unfortunately, (or really probably fortunately, this is sort of sensitive information) the creator of HIBP has anticipated uses such as this, and does not release the Ashley Madison data through the API, or to users except it will reveal if an email was in that leak only if the user first confirms that they have access to the email address. 
 Of course that renders the planned example impossible. </p>
 
 <p class=textPar>	I have built something similar, but not quite as useful. 
@@ -105,5 +115,7 @@ ADD IN EXPLANATION OF WHERE TO ACCESS IT.
 This implementation did not use a hard coded url, but adds the email addresses as it goes. 
 Finally the Else if statement that is looking for error 403, in the first version of the API, 403 is returned if there are no records. This merely ignores that possibility and logs nothing when that happens. 
 </p>
+
+<a href="Insert Link to 2nd Implementation">Previous Page</a> <a href="Insert Link to /">Home</a> 
 
 </body>
