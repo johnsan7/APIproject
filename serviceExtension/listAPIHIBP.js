@@ -37,11 +37,11 @@ app.get('/', function(req,res)
 //This should take the post request, then send a get request to HaveIBeenPwned, if the email was not in the Ashley Madison hack, it should add the email with a false as key, if it was, it should add the email with a true key
 app.post('/', function(req,res)
 {
-	console.log("getting to post");
+	//console.log("getting to post");
 	var outObj = {};
 	var hackedList = [];
 	var baseUrl = 'https://haveibeenpwned.com/api/breachedaccount/'
-		console.log("Got just before if");
+		//console.log("Got just before if");
 
 		console.log("Request length over 0, working");
 		for(var email in req.body)
@@ -55,22 +55,23 @@ app.post('/', function(req,res)
 					if(!err && (response.statusCode > 199 && response.statusCode < 400))
 					{
 						hackedList.push(body);
-						
+						console.log(hackedList);
 
 						//var response = JSON.parse(body);
-						console.log(hackedList);
 					}
-					else
+					else if(response.statusCode == 403)
 					{
-						console.log("Call to HaveIBeenPwned failed");
-						console.log(response.statusCode);
+						//console.log("403 status returned");
+						//var emptyList = ["None"];
+						//hackedList.push(emptyList);
 					}
 			
 				});
 			
-			
+
 		}
 		console.log("request done, got to end");
+		
 	outObj.badSites = hackedList;
 	res.JSON(outObj);
 });
