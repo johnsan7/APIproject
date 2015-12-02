@@ -24,7 +24,7 @@ app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 1925);
 
 //This is the basic code of the game. 
 
@@ -75,7 +75,7 @@ app.use(function(err,req,res,next){
 
 
 app.listen(app.get('port'), function(){
-	console.log('Started on port 3000');
+	console.log('Started on port 1925');
 	
 });
 

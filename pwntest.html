@@ -7,26 +7,26 @@
 				
 		var sendAddress = 'https://haveibeenpwned.com/api/breachedaccount/alanmandrag@hotmail.com';
 				
-		
+		//This sets up an asynchronous get request 
 		req.open('GET', sendAddress, true);
-		req.setRequestHeader("Accept", "application/vnd.haveibeenpwned.v2+json");
-		req.setRequestHeader("User-Agent", 'OSUTest');
-
+		
 		req.addEventListener('load',function()
 		{
 			if(req.status >= 200 && req.status < 400)
 			{
 				console.log("Request received back!");
-				//var response = JSON.parse(req.responseText);
 				console.log("Response Reads ", req.responseText);
 
 			}
+			//If email address is not found in a leak, 404 is returned. 
+			else if(req.status == 404) 
+			{
+				console.log("Email address was not found, no leak");
+			}
 			else
 			{
-				console.log("error, the network request failed " + request.statusText);
+				console.log("Error in request");
 			}
-					
-					
 					
 			});
 			
