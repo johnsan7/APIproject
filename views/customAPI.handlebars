@@ -44,7 +44,7 @@ I tried very hard to find a different way to do that, but I could not figure out
 	
 <p class=textPar> Second, I was not able to pair the email address with each leak information. 
 I tried many different ways, assuming I needed to create a closure, but it did not work.  
-Consequently. This implementation will log to console all of the different leaks every email address appeared in.
+Consequently. This implementation will log to console all of the different leaks every email address appeared in. The most important code is below, the code in its entirety is at the end of this page. 
 </p>	
 	
 <div class=code>
@@ -56,7 +56,7 @@ app.get('/', function(req,res)
 	console.log("Please send requests as POSTS");	
 
 });
-//This should take the post request, then send a get request to HIBP then leaks containing the emails are output to console
+//This should take the post request, then send a get request to HaveIBeenPwned, if the email was not in the Ashley Madison hack, it should add the email with a false as key, if it was, it should add the email with a true key
 app.post('/', function(req,res)
 {
 	
@@ -93,8 +93,7 @@ app.post('/', function(req,res)
 		}
 
 		
-	outObj.badSites = hackedList;
-	res.JSON(outObj);
+	res.render('returned');
 });
 
 
@@ -117,5 +116,107 @@ Finally the Else if statement that is looking for error 403, in the first versio
 </p>
 
 <a href="http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1925/2ndImplementaton">Previous Page</a> <a href="http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1925">Home</a> 
+
+<p>Here is the code in its entirety</p>
+
+<div class=code>
+<pre>
+//This code, var express through app.set('port',1776) is code from Professor Justin Wolford the OSU Web Development professor. The implementation that I have is the exact same as the lectures
+
+
+var express = require('express');
+
+var app = express();
+
+var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+var bodyParser = require('body-parser');
+
+
+var request = require('request');
+
+
+
+
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+
+
+
+
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+app.set('port', 1776);
+
+
+
+	
+app.get('/', function(req,res)
+{
+	console.log("Please send requests as POSTS");	
+
+});
+//This should take the post request, then send a get request to HaveIBeenPwned, if the email was not in the Ashley Madison hack, it should add the email with a false as key, if it was, it should add the email with a true key
+app.post('/', function(req,res)
+{
+	
+	var outObj = {};
+	var hackedList = [];
+	//The below is the url to add the email addresses to
+	var baseUrl = 'https://haveibeenpwned.com/api/breachedaccount/'
+		
+
+		//For each email address fed
+		for(var email in req.body)
+		{
+			var specificUser = req.body[email];
+			console.log("Specific user is: ", specificUser);
+			//The below sends the request to HIBP in a get using v1 of the API
+				request(baseUrl + specificUser, function(err,response,body)
+				{
+					var borkedEmail = specificUser;
+					console.log("making request to HIBP");
+					if(!err && (response.statusCode > 199 && response.statusCode < 400))
+					{
+						hackedList.push(body);
+						console.log(hackedList);
+
+					}
+					else if(response.statusCode == 403)
+					{
+
+					}
+			
+				});
+			
+
+		}
+
+		
+	res.render('returned');
+});
+
+
+//These next two functions were written by Justin Wolford, USO CS Professor
+app.use(function(req,res)
+{
+	res.status(404);
+	res.render('404');
+	
+});
+
+app.use(function(err,req,res,next){
+	res.type('plain/text');
+	res.status(500);
+	res.render('500');	
+});
+
+
+app.listen(app.get('port'), function(){
+	console.log('Started on port 1776');
+	
+});
+
+</pre>
+</div>
 
 </body>
