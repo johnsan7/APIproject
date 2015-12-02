@@ -70,8 +70,7 @@ app.post('/', function(req,res)
 		}
 
 		
-	outObj.badSites = hackedList;
-	res.JSON(outObj);
+	res.render('returned');
 });
 
 
