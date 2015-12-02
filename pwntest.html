@@ -10,7 +10,7 @@
 		
 		req.open('GET', sendAddress, true);
 		req.setRequestHeader("Accept", "application/vnd.haveibeenpwned.v2+json");
-		req.setRequestHeader("User-Agent", null);
+		req.setRequestHeader("User-Agent", 'OSUTest');
 
 		req.addEventListener('load',function()
 		{

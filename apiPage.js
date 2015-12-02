@@ -34,6 +34,29 @@ app.get('/', function(req,res,next){
 
 });
 
+app.get('/laxAPI', function(req,res,next){
+
+	res.render('laxapi');
+
+});
+
+app.get('/taleoftwoAPIs', function(req,res,next){
+
+	res.render('TaleOfTwoAPI');
+
+});
+
+app.get('/2ndImplementaton', function(req,res,next){
+
+	res.render('2ndImplementation');
+
+});
+
+app.get('/customAPI', function(req,res,next){
+
+	res.render('customAPI');
+
+});
 
 
 //These next two are right from the lectures
